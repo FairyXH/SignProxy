@@ -1,28 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <title>签到请求</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>签到操作入口</title>
 </head>
 <body>
-    <h3>签到 POST 请求</h3>
+  <h3>签到操作入口</h3>
 
-    <form
-        action="https://plat.hxxy.edu.cn/studentwork/PunchMStudent/CheckQrcode"
-        method="POST"
-        enctype="application/x-www-form-urlencoded">
+  <label>活动 ID：</label>
+  <input id="acid" value="25">
 
-        <label for="acid">活动 ID：</label>
-        <input
-            type="text"
-            id="acid"
-            name="acid"
-            value="25"
-            required>
+  <button onclick="openPlatform()">
+    打开学校平台
+  </button>
 
-        <button type="submit">发送 POST</button>
-    </form>
+  <p>打开学校平台后，点击预先保存的 POST 书签。</p>
+
+  <script>
+    function openPlatform() {
+      const acid = document.getElementById("acid").value;
+      sessionStorage.setItem("acid", acid);
+      location.href = "https://plat.hxxy.edu.cn/";
+    }
+  </script>
 </body>
 </html>
