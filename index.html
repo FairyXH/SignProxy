@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>签到请求</title>
+</head>
+<body>
+    <h3>签到 POST 请求</h3>
+
+    <form
+        action="https://plat.hxxy.edu.cn/studentwork/PunchMStudent/CheckQrcode"
+        method="POST"
+        enctype="application/x-www-form-urlencoded">
+
+        <label for="acid">活动 ID：</label>
+        <input
+            type="text"
+            id="acid"
+            name="acid"
+            value="25"
+            required>
+
+        <button type="submit">发送 POST</button>
+    </form>
+</body>
+</html>
